@@ -1,64 +1,62 @@
-# Proyecto de Procesamiento de Datos a Gran Escala
+# 🚑 Proyecto de Predicción de Riesgo de ACV con Apache Spark
 
-Este repositorio contiene el desarrollo de un proyecto analítico basado en la metodología CRISP-DM para el procesamiento de datos de gran escala, orientado a resolver preguntas de negocio en entornos educativos utilizando herramientas de Big Data.
+## 📝 Descripción
 
-## 📌 **Objetivos del Proyecto**
-
-- Comprender la importancia de las herramientas de Big Data en entornos empresariales y su capacidad para resolver problemas de negocio.
-- Aplicar la metodología CRISP-DM para la elaboración de proyectos analíticos y generar hallazgos de valor en el análisis de datos.
-- Documentar la implementación de un cluster como infraestructura para procesar grandes volúmenes de datos, utilizando máquinas virtuales.
-- Realizar procesamiento de datos y generar resultados aplicados a un problema real relacionado con el sector educativo.
+Este proyecto se centra en el análisis y modelado de un conjunto de datos clínicos con el fin de predecir el riesgo de accidente cerebrovascular (ACV) en pacientes. A partir de un archivo CSV cargado desde un repositorio de GitHub, se realiza un proceso de limpieza y exploración de los datos, transformación de la información categórica mediante indexación, y construcción de un modelo de clasificación basado en Árboles de Decisión utilizando Apache Spark. El rendimiento del modelo se evalúa a través de métricas clave, con especial énfasis en la precisión clínica para identificar correctamente a los pacientes con riesgo de ACV.
 
 ---
 
-## 📌 **Metodología CRISP-DM**
+## 🛠️ Tecnologías Utilizadas
 
-El proyecto se ejecuta utilizando la metodología CRISP-DM (Cross-Industry Standard Process for Data Mining) para realizar un análisis completo de los datos y responder a las preguntas de negocio planteadas.
-
-### Fases del Proyecto
-
-1. **Entendimiento del Negocio y de los Datos (Entrega 1)**  
-   - Contextualización del problema y objetivos de negocio.
-   - Selección y análisis de los conjuntos de datos proporcionados.
-   - Exploración, limpieza, transformación y generación de preguntas de negocio para abordar en la segunda entrega.
-
-2. **Preparación de Datos, Modelado y Presentación de Resultados (Entrega 2)**  
-   - Realización de filtros y transformaciones adicionales en los datos.
-   - Respuesta a las preguntas de negocio mediante análisis y visualización de datos.
-   - Aplicación de técnicas de aprendizaje automático (supervisado y no supervisado).
-   - Implementación de los modelos en el entorno Databricks y cluster Apache Spark.
+- **Apache Spark (PySpark)**: Para la manipulación, transformación y modelado de datos en gran escala.
+- **NumPy**: Para realizar cálculos numéricos auxiliares.
+- **Matplotlib & Seaborn**: Para la visualización gráfica de datos y resultados.
+- **pyspark.sql**: Para trabajar con DataFrames distribuidos y realizar consultas estructuradas.
 
 ---
 
-## 🚀 **Tecnologías y Herramientas Utilizadas**
+## ⚙️ Proceso Realizado
 
-- **Databricks**: Plataforma unificada para el análisis y procesamiento de datos.
-- **Apache Spark**: Motor de procesamiento distribuido utilizado para trabajar con grandes volúmenes de datos.
-- **Python**: Lenguaje principal para la manipulación y análisis de datos.
-- **MLlib**: Librería de aprendizaje automático de Apache Spark.
+1. **Carga y Renombrado de Columnas**  
+   Se cargó el dataset desde GitHub y se estandarizaron los nombres de las columnas para mejorar su manejo.
+
+2. **Verificación del Esquema del DataFrame**  
+   Se revisaron los tipos de datos y la estructura del DataFrame para garantizar su correcta interpretación.
+
+3. **Exploración de Categorías y Datos Faltantes**  
+   Se analizaron las variables categóricas, se identificaron valores nulos y se procedió con la limpieza de datos.
+
+4. **Cálculo del Promedio de IMC**  
+   Se implementó una función para calcular el Índice de Masa Corporal (IMC) promedio y detectar anomalías en los valores.
+
+5. **Visualización Gráfica**  
+   Se generaron gráficos para comprender la distribución de las variables y su relación con el riesgo de ACV.
+
+6. **Preparación y Transformación de Datos**  
+   Las variables fueron indexadas y ensambladas en un pipeline de Spark para facilitar el entrenamiento del modelo.
+
+7. **Construcción del Modelo de Clasificación (Árbol de Decisión)**  
+   Se entrenó un modelo supervisado utilizando un Árbol de Decisión para predecir la variable objetivo (riesgo de ACV).
+
+8. **Evaluación del Modelo**  
+   Se evaluó el rendimiento del modelo utilizando métricas como accuracy, precision, recall, F1 score y AUC-ROC, además de la matriz de confusión.
 
 ---
 
-## 📊 **Estructura del Proyecto**
+## 📈 Resultados y Beneficios
 
-1. **Entrega 1: Entendimiento del Negocio y de los Datos**
-   - Análisis de los datos del servicio de internet por municipio, pobreza, ICFES y niveles de educación.
-   - Exploración estadística de los datos, reporte de calidad y generación de preguntas de negocio.
-
-2. **Entrega 2: Preparación de Datos, Modelado y Respuesta a las Preguntas**
-   - Transformación y limpieza de los datos.
-   - Aplicación de técnicas de aprendizaje supervisado y no supervisado.
-   - Evaluación de los resultados y respuesta a las preguntas de negocio planteadas.
+Este proyecto proporciona una herramienta predictiva capaz de identificar a pacientes con alto riesgo de sufrir un ACV. Esta herramienta puede ser utilizada en entornos clínicos para priorizar evaluaciones y tratamientos preventivos, ayudando a optimizar el uso de recursos médicos y mejorar la atención al paciente. Además, al balancear la detección efectiva de casos reales y minimizar las falsas alarmas, contribuye a una mayor eficiencia en la toma de decisiones clínicas.
 
 ---
 
-## 🥷 **Autor**
-- **[Juan Pablo Arias](https://github.com/JuanParias29/Perfil_GitHub)**
+## 🧑‍💻 **Autor**
+
+**[Juan Pablo Arias](https://github.com/JuanParias29/Perfil_GitHub)**
 
 ---
-## 📅**Curso**
+
+## 📅 **Curso**
+
 **Procesamiento de Datos a Gran Escala**  
-📍 *Pontificia Universidad Javeriana*  
-👨‍🏫 *Docente:* [John Corredor, PhD](https://github.com/corredor-john)
-
-¡Bienvenido a este desafío en el mundo del procesamiento de datos a gran escala! 🚀
+* Pontificia Universidad Javeriana
+* Docente: [John Corredor, PhD](https://github.com/corredor-john)
